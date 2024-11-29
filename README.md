@@ -1,4 +1,4 @@
-# GlobalSync: Revolutionizing Global Workforce Management 🌍
+# GlobalSync: Revolutionizing Global Workforce Management
 
 **GlobalSync** is an innovative platform designed to empower remote teams to work seamlessly across different time zones. By providing intuitive tools for time zone coordination, collaboration, and scheduling, GlobalSync ensures productivity and convenience for global teams.
 
