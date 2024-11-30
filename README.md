@@ -73,7 +73,7 @@
 
 ### Frontend:
 
-- React.js
+- Next.js
 - TailwindCSS
 
 ### Backend:
