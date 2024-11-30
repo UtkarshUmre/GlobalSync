@@ -1,5 +1,6 @@
 import ClassyButton from "@/components/ui/ClassyButton";
 import { GlobeDemo } from "@/components/World";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,12 +15,15 @@ export default function Home() {
       <p className="text-3xl dark:text-neutral-500">
         Revolutionizing Global Workforce Management
       </p>
-      <button className="p-[3px] relative mt-4">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg" />
-        <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-          Get Started
-        </div>
-      </button>
+      <Link href="/dashboard">
+        <button className="p-[3px] relative mt-4">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg" />
+          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+            Get Started
+          </div>
+        </button>
+      </Link>
+
       <GlobeDemo />
     </div>
   );
