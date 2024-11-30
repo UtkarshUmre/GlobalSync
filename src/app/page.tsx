@@ -6,8 +6,12 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center m-5 bg-black">
       <div className="flex justify-center items-center absolute top-6 right-3 gap-2 ">
-        <ClassyButton name="Login" />
-        <ClassyButton name="Sign Up" />
+        <Link href="/login">
+          <ClassyButton name="Login" />
+        </Link>
+        <Link href="/sign-up">
+          <ClassyButton name="Sign Up" />
+        </Link>
       </div>
       <h1 className="leading-tight text-6xl mx-auto font-bold  dark:text-neutral-300 hover:text-white">
         GlobalSync
