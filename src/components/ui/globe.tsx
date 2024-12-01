@@ -1,10 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
-import ThreeGlobe from "three-globe";
-import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
+import { OrbitControls } from "@react-three/drei";
+import { Canvas, Object3DNode, extend, useThree } from "@react-three/fiber";
+import { useEffect, useRef, useState } from "react";
+import { Color, Fog, PerspectiveCamera, Scene, Vector3 } from "three";
+import ThreeGlobe from "three-globe";
 declare module "@react-three/fiber" {
   interface ThreeElements {
     threeGlobe: Object3DNode<ThreeGlobe, typeof ThreeGlobe>;
@@ -78,12 +78,12 @@ export function Globe({ globeConfig, data }: WorldProps) {
     pointSize: 1,
     atmosphereColor: "#ffffff",
     showAtmosphere: true,
-    atmosphereAltitude: 0.1,
-    polygonColor: "rgba(255,255,255,0.7)",
+    atmosphereAltitude: 0.3,
+    polygonColor: "rgba(255,255,255)",
     globeColor: "#1d072e",
     emissive: "#000000",
-    emissiveIntensity: 0.1,
-    shininess: 0.9,
+    emissiveIntensity: 0.5,
+    shininess: 1,
     arcTime: 2000,
     arcLength: 0.9,
     rings: 1,
@@ -249,7 +249,7 @@ export function World(props: WorldProps) {
   return (
     <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
       <WebGLRendererConfig />
-      <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
+      <ambientLight color={globeConfig.ambientLight} intensity={1} />
       <directionalLight
         color={globeConfig.directionalLeftLight}
         position={new Vector3(-400, 100, 400)}
