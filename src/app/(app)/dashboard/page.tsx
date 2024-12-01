@@ -1,6 +1,8 @@
 "use client";
 
-const Dashboard = () => {
+import Link from "next/link";
+
+export default function Dashboard() {
   const stats = [
     { label: "Team Members", value: "3" },
     { label: "Time Zones", value: "3" },
@@ -18,12 +20,14 @@ const Dashboard = () => {
       <div className="p-2 md:p-10 rounded-tl-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 flex flex-col gap-2 flex-1 w-full h-full">
         <div className="flex justify-between">
           <h1 className="text-4xl">Dashboard</h1>
-          <button className="p-[3px] relative mt-4 -top-4">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg" />
-            <div className="px-4 py-1  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-              Schedule Meet
-            </div>
-          </button>
+          <Link href="/scheduling">
+            <button className="p-[3px] relative mt-4 -top-4">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg" />
+              <div className="px-4 py-1  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+                Schedule Meet
+              </div>
+            </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-4 grid-rows-4 gap-4">
@@ -56,7 +60,9 @@ const Dashboard = () => {
                 >
                   <p>{member.label}:</p>
                   <div className="flex justify-between items-center">
-                    <p className="font-light text-neutral-400 text-sm">{member.timezone}</p>
+                    <p className="font-light text-neutral-400 text-sm">
+                      {member.timezone}
+                    </p>
                     <p className="">{member.status}</p>
                   </div>
                 </div>
@@ -67,6 +73,4 @@ const Dashboard = () => {
       </div>
     </div>
   );
-};
-
-export default Dashboard;
+}
